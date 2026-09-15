@@ -1,9 +1,10 @@
 import express from "express";
+import runGraph from "./ai/graph.ai.js";
 
 const app = express()
 
-app.get('/', (req, res) => {
-    res.send('Hello Mf')
+app.get('/', async (req, res) => {
+    const result = await runGraph("Write a function to reverse a string in JavaScript.");
 })
 
 export default app
